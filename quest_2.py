@@ -19,6 +19,4 @@ for i in cubenumber:
      if x % 7 == 0:
           result += i
 
-
-
 print(result)

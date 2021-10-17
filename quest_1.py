@@ -1,6 +1,5 @@
 duration = int(input('Введите продолжительность времени в секундах: '))
 time =[]
-
 if duration < 60:
     time.append(f'{duration} cек')
 
