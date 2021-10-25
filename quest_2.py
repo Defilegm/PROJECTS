@@ -1,24 +1,18 @@
-cubenumber = []
-result = 0
-for i in range (1,1000,2):
-     i = i ** 3
-     cubenumber.append(i)
-
-for i in cubenumber:
-     summ = [int(a) for a in str(i)]
-     x = sum(summ)
-     if x % 7 == 0:
-          result += i
-print(result)
-
-result = 0
-for i in cubenumber:
-     i+=17
-     summ = [int(a) for a in str(i)]
-     x = sum(summ)
-     if x % 7 == 0:
-          result += i
+thesaurus_dict = {}
 
 
+def thesaurus(*saurus):
+    for name in saurus:
+        for upper in name[1:]:
+            if upper.istitle():
+                if upper in thesaurus_dict:
+                    if name[0] in thesaurus_dict[upper]:
+                        thesaurus_dict[upper][name[0]].append(name)
+                    else:
+                        thesaurus_dict[upper][name[0]] = [name]
+                else:
+                    thesaurus_dict[upper] = dict.fromkeys([name[0]], [name])
 
-print(result)
+
+thesaurus("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева", "Анатолий Артемьев")
+print(thesaurus_dict)

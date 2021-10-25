@@ -1,16 +1,26 @@
-duration = int(input('Введите продолжительность времени в секундах: '))
-time =[]
+number_dict = {
+    'zero': 'ноль',
+    'one': 'один',
+    'two': 'два',
+    'three': 'три',
+    'four': 'четыре',
+    'five': 'пять',
+    'six': 'шесть',
+    'seven': 'семь',
+    'eight': 'восемь',
+    'nine': 'девять',
+    'ten': 'десять',
+}
 
-if duration < 60:
-    time.append(f'{duration} cек')
 
-if duration < 3600 and duration >= 60:
-    time.append(f'{duration // 60}  мин {duration % 60} сек')
+def num_translate(str_number):
+    if str_number.lower() in number_dict:
+        if str_number.istitle():
+            return number_dict[str_number.lower()].capitalize()
+        else:
+            return number_dict[str_number]
+    else:
+        return None
 
-if   duration < 86400 and duration >= 3600:
-    time.append(f'{duration // 3600} час {duration % 3600 // 60} мин {duration % 3600 % 60} cек')
 
-if duration >= 86400:
-    time.append(
-        f'{duration // 86400} дн {duration % 86400 // 3600} час {duration % 86400 % 3600 // 60} мин {duration % 86400 % 60} cек')
-print(time)
+print(num_translate('five'))
