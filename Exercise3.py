@@ -12,6 +12,7 @@ def thesaurus(*saurus):
                         thesaurus_dict[upper][name[0]] = [name]
                 else:
                     thesaurus_dict[upper] = dict.fromkeys([name[0]], [name])
+                    
 
 
 thesaurus("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева", "Анатолий Артемьев")

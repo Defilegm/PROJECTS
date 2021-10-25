@@ -13,6 +13,7 @@ number_dict = {
 }
 
 
+
 def num_translate(str_number):
     if str_number.lower() in number_dict:
         if str_number.istitle():

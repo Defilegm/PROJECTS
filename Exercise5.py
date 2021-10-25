@@ -34,4 +34,5 @@ def get_jokes(number, flag=False):
                         adjectives.remove(adjective)
 
 
+
 get_jokes(4, flag=False)
